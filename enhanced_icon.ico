@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for gradients and shadows -->
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4B79A1"/>
+      <stop offset="100%" stop-color="#283E51"/>
+    </radialGradient>
+
+    <!-- Human Figure Gradient -->
+    <linearGradient id="figureGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#FFA500"/>
+    </linearGradient>
+
+    <!-- Controller Gradient -->
+    <linearGradient id="controllerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#333333"/>
+    </linearGradient>
+
+    <!-- Camera Gradient -->
+    <linearGradient id="cameraGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#555555"/>
+      <stop offset="100%" stop-color="#222222"/>
+    </linearGradient>
+
+    <!-- Lens Gradient -->
+    <radialGradient id="lensGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#CCCCCC"/>
+    </radialGradient>
+
+    <!-- Drop Shadow -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Circle with Gradient and Shadow -->
+  <circle cx="100" cy="100" r="95" fill="url(#bgGradient)" filter="url(#dropShadow)"/>
+
+  <!-- Human Figure -->
+  <g>
+    <!-- Head -->
+    <circle cx="100" cy="60" r="15" fill="url(#figureGradient)" stroke="#FFD700" stroke-width="2"/>
+
+    <!-- Body -->
+    <line x1="100" y1="75" x2="100" y2="130" stroke="url(#figureGradient)" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Left Arm -->
+    <path d="M100,90 Q80,100 100,110" stroke="url(#figureGradient)" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+    <!-- Right Arm -->
+    <path d="M100,90 Q120,100 100,110" stroke="url(#figureGradient)" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+    <!-- Left Leg -->
+    <line x1="100" y1="130" x2="80" y2="170" stroke="url(#figureGradient)" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Right Leg -->
+    <line x1="100" y1="130" x2="120" y2="170" stroke="url(#figureGradient)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Game Controller -->
+  <g transform="translate(70, 105)">
+    <!-- Controller Body -->
+    <ellipse cx="0" cy="0" rx="15" ry="8" fill="url(#controllerGradient)" stroke="#000000" stroke-width="1"/>
+
+    <!-- D-pad -->
+    <rect x="-10" y="-6" width="4" height="4" fill="#FFFFFF"/>
+    <rect x="-6" y="-10" width="4" height="4" fill="#FFFFFF"/>
+    <rect x="-2" y="-6" width="4" height="4" fill="#FFFFFF"/>
+    <rect x="-6" y="-2" width="4" height="4" fill="#FFFFFF"/>
+
+    <!-- Buttons -->
+    <circle cx="8" cy="-4" r="2" fill="#FF0000"/>
+    <circle cx="12" cy="0" r="2" fill="#00FF00"/>
+    <circle cx="8" cy="4" r="2" fill="#0000FF"/>
+    <circle cx="4" cy="0" r="2" fill="#FFFF00"/>
+  </g>
+
+  <!-- Camera Icon -->
+  <g transform="translate(130, 80)">
+    <!-- Camera Body -->
+    <rect x="-15" y="-10" width="30" height="20" fill="url(#cameraGradient)" stroke="#000000" stroke-width="1" rx="3" ry="3"/>
+
+    <!-- Lens -->
+    <circle cx="0" cy="0" r="6" fill="url(#lensGradient)" stroke="#555555" stroke-width="1"/>
+
+    <!-- Flash -->
+    <rect x="10" y="-5" width="8" height="3" fill="#555555" rx="1" ry="1"/>
+    <rect x="10" y="2" width="8" height="3" fill="#555555" rx="1" ry="1"/>
+  </g>
+
+  <!-- Optional: Overlay Text or Symbol -->
+  <!-- <text x="100" y="195" font-family="Arial" font-size="12" fill="#FFFFFF" text-anchor="middle">GCP</text> -->
+</svg>

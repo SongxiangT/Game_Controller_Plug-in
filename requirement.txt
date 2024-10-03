@@ -1,0 +1,5 @@
+opencv-python
+mediapipe==0.10.0
+pynput
+psutil
+pywin32
